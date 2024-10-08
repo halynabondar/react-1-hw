@@ -62,7 +62,6 @@ export const OurCrew = () => {
                         Lee is responsible for the state-of-the-art technology that powers our spacecraft. Her
                         innovation ensures that our travelers are always in safe hands.</p>
                 </div>
-
             </div>
         </section>
     );
