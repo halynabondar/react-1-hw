@@ -6,54 +6,54 @@
 
 /* Our Values */
 
-.container_values {
+.containerValues {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 1rem 2rem 1rem 1rem;
 }
-.item_values {
+.itemValues {
   display: flex;
   align-items: center;
 }
-.number_values_first {
+.numberValuesFirst {
   color: gray;
   font-size: 120px;
   padding: 20px 30px 20px 30px;
 }
-.number_values {
+.numberValues {
   color: gray;
   font-size: 120px;
   padding: 20px;
 }
-.text_values {
+.textValues {
   line-height: 22px;
 }
 
 /* Our Crew */
 
-.text_crew, .text_partners {
+.textCrew, .textPartners {
   width: 700px;
   line-height: 22px;
   padding-top: 10px;
   margin: 12px 0 0 33px;
 }
 
-.container_crew {
+.containerCrew {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   padding: 2rem;
 }
-.item_crew {
+.itemCrew {
   display: flex;
   flex-direction: column;
   width: 280px;
 }
-.image_crew {
+.imageCrew {
   margin-bottom: 20px;
 }
-.image_crew img {
+.imageCrew img {
   object-fit: cover;
   display: block;
   background-color: white;
@@ -61,15 +61,15 @@
   width: 280px;
   border-radius: 20px;
 }
-.title_crew {
+.titleCrew {
   margin-top: 5px;
   font-size: 14px;
   color: gray;
 }
-.name_crew {
+.nameCrew {
   font-weight: bold;
 }
-.description_crew {
+.descriptionCrew {
   margin-top: 20px;
   font-size: 14px;
   font-style: italic;
@@ -78,17 +78,17 @@
 
 /* Our Partners */
 
-.container_partners {
+.containerPartners {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   padding: 2rem;
   align-items: center;
 }
-.item_partners {
+.itemPartners {
   display: flex;
   justify-content: center;
 }
-.image_partners {
+.imagePartners {
   max-width: 70%;
 }

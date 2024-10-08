@@ -2,23 +2,23 @@ import styles from './page.module.css';
 
 export const OurValues = () => {
     return (
-        <div className={styles.container_values}>
-            <div className={styles.item_values}>
-                <div className={styles.number_values_first}>1</div>
+        <div className={styles.containerValues}>
+            <div className={styles.itemValues}>
+                <div className={styles.numberValuesFirst}>1</div>
                 <div>
                     <h3>Exploration</h3>
-                    <p className={styles.text_values}>We are driven by a deep-seated desire to explore the unknown. We believe
+                    <p className={styles.textValues}>We are driven by a deep-seated desire to explore the unknown. We believe
                         that the pursuit of
                         discovery is at the heart of human nature, and we are committed to pushing the boundaries of
                         what is
                         possible.</p>
                 </div>
             </div>
-            <div className={styles.item_values}>
-                <div className={styles.number_values}>2</div>
+            <div className={styles.itemValues}>
+                <div className={styles.numberValues}>2</div>
                 <div>
                     <h3>Innovation</h3>
-                    <p className={styles.text_values}>At Galactica, we prioritize cutting-edge technology and innovation. We
+                    <p className={styles.textValues}>At Galactica, we prioritize cutting-edge technology and innovation. We
                         are constantly
                         evolving
                         our spacecraft, safety protocols, and services to ensure that our travelers experience the
@@ -26,21 +26,21 @@ export const OurValues = () => {
                         advanced and secure space journeys available.</p>
                 </div>
             </div>
-            <div className={styles.item_values}>
-                <div className={styles.number_values}>3</div>
+            <div className={styles.itemValues}>
+                <div className={styles.numberValues}>3</div>
                 <div>
                     <h3>Sustainability</h3>
-                    <p className={styles.text_values}>We are committed to making space exploration sustainable for future
+                    <p className={styles.textValues}>We are committed to making space exploration sustainable for future
                         generations. Our space
                         missions are designed to minimize environmental impact, both on Earth and in space, and to
                         foster a spirit of responsibility towards our universe.</p>
                 </div>
             </div>
-            <div className={styles.item_values}>
-                <div className={styles.number_values}>4</div>
+            <div className={styles.itemValues}>
+                <div className={styles.numberValues}>4</div>
                 <div>
                     <h3>Community</h3>
-                    <p className={styles.text_values}>We believe in the power of collective exploration. Our journeys are not
+                    <p className={styles.textValues}>We believe in the power of collective exploration. Our journeys are not
                         just about reaching
                         new
                         destinations; they are about building a community of space enthusiasts who share a passion
