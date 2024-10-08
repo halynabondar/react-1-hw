@@ -3,20 +3,74 @@
   width: 100vw;
   height: 100vh;
 }
-.container {
+
+/* Our Values */
+
+.container_values {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 1rem;
 }
-.item {
+.item_values {
   display: flex;
   align-items: center;
 }
-.number {
+.number_values_first {
+  font-size: 120px;
+  padding: 20px 30px 20px 30px;
+}
+.number_values {
   font-size: 120px;
   padding: 20px;
 }
-.text {
+.text_values {
   line-height: 22px;
 }
+
+/* Our Crew */
+
+.text_crew {
+  width: 700px;
+  line-height: 22px;
+  padding-top: 10px;
+  margin: 10px 0 10px 20px;
+}
+
+.container_crew {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem;
+}
+.item_crew {
+  display: flex;
+  flex-direction: column;
+}
+.image_crew {
+  margin-bottom: 20px;
+}
+.image_crew img {
+  object-fit: cover;
+  display: block;
+  background-color: white;
+  height: 400px;
+  width: 315px;
+  border-radius: 20px;
+}
+.title_crew {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.name_crew {
+  font-weight: bold;
+}
+.description_crew {
+  margin-top: 20px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 20px;
+}
+
+/* Our Partners */
+
