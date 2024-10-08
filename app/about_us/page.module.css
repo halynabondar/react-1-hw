@@ -10,17 +10,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
 }
 .item_values {
   display: flex;
   align-items: center;
 }
 .number_values_first {
+  color: gray;
   font-size: 120px;
   padding: 20px 30px 20px 30px;
 }
 .number_values {
+  color: gray;
   font-size: 120px;
   padding: 20px;
 }
@@ -30,7 +32,7 @@
 
 /* Our Crew */
 
-.text_crew {
+.text_crew, .text_partners {
   width: 700px;
   line-height: 22px;
   padding-top: 10px;
@@ -61,6 +63,7 @@
 .title_crew {
   margin-top: 5px;
   font-size: 14px;
+  color: gray;
 }
 .name_crew {
   font-weight: bold;
@@ -74,3 +77,17 @@
 
 /* Our Partners */
 
+.container_partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+.item_partners {
+  display: flex;
+  justify-content: center;
+}
+.image_partners {
+  max-width: 70%;
+}
