@@ -1,67 +1,61 @@
 import styles from './page.module.css';
 
+const crewMembers = [
+    {
+        name: "Sarah Vega",
+        imageUrl: "crew/image-anousheh-ansari.png",
+        title: "Mission Commander",
+        description:
+            "A former NASA astronaut with over 15 years of experience, Captain Vega leads our missions with unparalleled expertise and a passion for space exploration.",
+    },
+    {
+        name: "Dr. Leo Redding",
+        title: "Chief AstroPhysicist",
+        imageUrl: "crew/image-mark-shuttleworth.png",
+        description:
+            "Our chief astrophysicist, Dr. Redding, is a renowned scientist who has contributed to major space discoveries. He ensures that every journey is as educational as it is exhilarating.",
+    },
+    {
+        name: "Hana Lee",
+        title: "Chief Engineer",
+        imageUrl: "crew/image-victor-glover.png",
+        description:
+            "With her extensive background in aerospace engineering, Hana Lee is responsible for the state-of-the-art technology that powers our spacecraft. Her innovation ensures that our travelers are always in safe hands.",
+    },
+    {
+        name: "Alex Santos",
+        title: "Mission Specialist",
+        imageUrl: "crew/image-douglas-hurley.png",
+        description:
+            "As a mission specialist, Alex’s job is to ensure that every aspect of the journey runs smoothly. With a background in both science and adventure tourism, Alex is the perfect guide for our space travelers.",
+    },
+    {
+        name: "Maya Patel",
+        title: "Crew Member",
+        imageUrl: "crew/image-anousheh-ansari.png",
+        description:
+            "Maya brings a unique blend of technical skills and customer service experience to the team. She’s always ready to assist with any needs and to make sure every traveler has an unforgettable experience.",
+    },
+];
+
 export const OurCrew = () => {
     return (
         <section>
             <p className={styles.textCrew}>Our crew is the heart and soul of Galactica. We are a diverse team of
-                seasoned space explorers,
-                engineers, and visionaries who are united by a common goal: to make space travel accessible and exciting
+                seasoned space explorers, engineers, and visionaries who are united by a common goal: to make space
+                travel accessible and exciting
                 for all.</p>
             <div className={styles.containerCrew}>
-                <div className={styles.itemCrew}>
-                    <div className={styles.imageCrew}>
-                        <img src={"crew/image-anousheh-ansari.png"} alt={"anousheh-ansari"}></img>
+                {crewMembers.map((member, index) => (
+                    <div className={styles.itemCrew} key={index}>
+                        <div className={styles.imageCrew}>
+                            <img src={member.imageUrl} alt={`image of {member.name}`}></img>
+                        </div>
+                        <div className={styles.nameCrew}>{member.name}</div>
+                        <div className={styles.titleCrew}>{member.title}</div>
+                        <p className={styles.descriptionCrew}>{member.description}</p>
                     </div>
-                    <div className={styles.nameCrew}>Captain Sarah Vega</div>
-                    <div className={styles.titleCrew}>Astronaut</div>
-                    <p className={styles.descriptionCrew}>A former NASA astronaut with over 15 years of experience,
-                        Captain
-                        Vega leads our missions with unparalleled expertise and a passion for space exploration.</p>
-                </div>
-                <div className={styles.itemCrew}>
-                    <div className={styles.imageCrew}>
-                        <img src={"crew/image-douglas-hurley.png"} alt={"image-douglas-hurley"}></img>
-                    </div>
-                    <div className={styles.nameCrew}>Dr. Leo Redding</div>
-                    <div className={styles.titleCrew}>Chief astrophysicist</div>
-                    <p className={styles.descriptionCrew}>Our chief astrophysicist, Dr. Redding, is a renowned
-                        scientist who
-                        has contributed to major space discoveries. He ensures that every journey is as educational as
-                        it is exhilarating.</p>
-                </div>
-                <div className={styles.itemCrew}>
-                    <div className={styles.imageCrew}>
-                        <img src={"crew/image-victor-glover.png"}
-                             alt={"image-victor-glover"}></img>
-                    </div>
-                    <div className={styles.nameCrew}>Alex Santos</div>
-                    <div className={styles.titleCrew}>Mission Specialist</div>
-                    <p className={styles.descriptionCrew}>As a mission specialist, Alex’s job is to ensure that every
-                        aspect
-                        of the journey runs smoothly. With a background in both science and adventure tourism, Alex is
-                        the perfect guide for our space travelers.</p>
-                </div>
-                <div className={styles.itemCrew}>
-                    <div className={styles.imageCrew}>
-                        <img src={"crew/image-mark-shuttleworth.png"} alt={"image-mark-shuttleworth"}></img>
-                    </div>
-
-                    <div className={styles.nameCrew}>Maya Patel</div>
-                    <div className={styles.titleCrew}>Crew Member</div>
-                    <p className={styles.descriptionCrew}>Maya brings a unique blend of technical skills and customer
-                        service experience to the team. She’s always ready to assist with any needs and to make sure
-                        every traveler has an unforgettable experience.</p>
-                </div>
-                <div className={styles.itemCrew}>
-                    <div className={styles.imageCrew}>
-                        <img src={"crew/image-anousheh-ansari.png"} alt={"image-anousheh-ansari"}></img>
-                    </div>
-                    <div className={styles.nameCrew}>Hana Lee</div>
-                    <div className={styles.titleCrew}>Chief Engineer</div>
-                    <p className={styles.descriptionCrew}>With her extensive background in aerospace engineering, Hana
-                        Lee is responsible for the state-of-the-art technology that powers our spacecraft. Her
-                        innovation ensures that our travelers are always in safe hands.</p>
-                </div>
+                ))}
             </div>
         </section>
     );
