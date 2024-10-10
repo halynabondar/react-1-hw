@@ -1,5 +1,40 @@
 import styles from './page.module.css';
 
+const ourPartners = [
+    {
+        companyName: "Alphabet",
+        logoUrl: "./business_partners/alphabet-logo.png",
+    },
+    {
+        companyName: "Amazon",
+        logoUrl: "./business_partners/amazon_logo.png",
+    },
+    {
+        companyName: "CBC",
+        logoUrl: "./business_partners/CBC_Logo_White.png",
+    },
+    {
+        companyName: "Microsoft",
+        logoUrl: "./business_partners/Microsoft-Logo-white.png",
+    },
+    {
+        companyName: "NYU",
+        logoUrl: "./business_partners/nyu-logo.png",
+    },
+    {
+        companyName: "Queens",
+        logoUrl: "./business_partners/QueensLogo_white.png",
+    },
+    {
+        companyName: "Samsung",
+        logoUrl: "./business_partners/samsung-logo.png",
+    },
+    {
+        companyName: "Sodexo",
+        logoUrl: "./business_partners/sodexo-logo.png",
+    },
+];
+
 export const OurPartners = () => {
     return (
         <section>
@@ -7,39 +42,12 @@ export const OurPartners = () => {
                 technology industries to make
                 every journey extraordinary.</p>
             <div className={styles.containerPartners}>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/alphabet-logo.png"}
-                         alt={"alphabet-logo"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/amazon_logo.png"}
-                         alt={"amazon_logo"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/CBC_Logo_White.png"}
-                         alt={"CBC_Logo_White"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/Microsoft-Logo-white.png"}
-                         alt={"Microsoft-Logo-white"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/nyu-logo.png"}
-                         alt={"nyu-logo"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/QueensLogo_white.png"}
-                         alt={"QueensLogo_white"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/samsung-logo.png"}
-                         alt={"samsung-logo"}></img>
-                </div>
-                <div className={styles.itemPartners}>
-                    <img className={styles.imagePartners} src={"business_partners/sodexo-logo.png"}
-                         alt={"sodexo-logo"}></img>
-                </div>
-            </div>
+                {ourPartners.map(partner => (
+                    <div className={styles.itemPartners}>
+                        <img className={styles.imagePartners} src={partner.logoUrl}
+                             alt={partner.companyName}></img>
+                    </div>
+                ))}
+            < /div>
         </section>
-    );
-}
+    )};
