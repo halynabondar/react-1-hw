@@ -3,7 +3,7 @@ import {OurPartners} from "@/app/about_us/OurPartners";
 import {OurCrew} from "@/app/about_us/OurCrew";
 import {OurValues} from "@/app/about_us/OurValues";
 
-export const Crew = () => {
+const Crew = () => {
   return (
     <div className="fullBGpicture">
         <main className="mainContent">
