@@ -35,7 +35,7 @@ const ourPartners = [
     },
 ];
 
-export const OurPartners = () => {
+const OurPartners = () => {
     return (
         <section>
             <p className={styles.textPartners}>We collaborate with some of the most respected names in the space and
@@ -51,3 +51,5 @@ export const OurPartners = () => {
             < /div>
         </section>
     )};
+
+export default OurPartners;

@@ -23,7 +23,7 @@ const values = [
     }
 ];
 
-export const OurValues = () => {
+const OurValues = () => {
     return (
         <div className={styles.containerValues}>
             {values.map((value, index) => (
@@ -38,3 +38,5 @@ export const OurValues = () => {
         </div>
     )
 }
+
+export default OurValues;
