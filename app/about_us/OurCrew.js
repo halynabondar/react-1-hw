@@ -38,7 +38,7 @@ const crewMembers = [
     },
 ];
 
-const OurCrew = () => {
+export const OurCrew = () => {
     return (
         <section>
             <p className={styles.textCrew}>Our crew is the heart and soul of Galactica. We are a diverse team of
@@ -60,5 +60,3 @@ const OurCrew = () => {
         </section>
     );
 }
-
-export default OurCrew;
