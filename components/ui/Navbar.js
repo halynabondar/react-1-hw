@@ -22,7 +22,7 @@ const navbarItems = [
 ];
 
 // NavItem Component
-const NavItem = ({ title, link, isActive, index }) => {
+const NavItem = ({title, link, isActive, index}) => {
     return (
         <li className={classNames(styles.navbarLinks, {
             [styles.isLinkActive]: isActive,
