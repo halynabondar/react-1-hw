@@ -46,3 +46,7 @@
 .footerList li {
   padding-block: var(--spacing-04);
 }
+.listItem {
+  padding: 5px;
+  list-style: none;
+}
