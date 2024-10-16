@@ -35,19 +35,21 @@ export const Destinations = () => {
         },
     ]
 
-    const [selectedPlanets, onAddPlanet] = useState([]);
-
-    let isPlanetSelected = false;
-    let numberOfPlanets = 0;
+    const [selectedPlanets, setSelectedPlanets] = useState([]);
 
     const onAddOrRemovePlanet = (name, index) => {
-
-        // TASK - React 1 week 2
-        // Implement this function
-        // If you press the "ADD PLANET" the selected planet should display "SELECTED"
-        // And the counter should update, how many planets are selected (numberOfPlanets)
+        setSelectedPlanets((prevSelectedPlanets) => {
+            if (prevSelectedPlanets.includes(name)) {
+                // Remove the planet if it is already selected
+                return prevSelectedPlanets.filter(planet => planet !== name);
+            } else {
+                // Add the planet if it is not already selected
+                return [...prevSelectedPlanets, name];
+            }
+        });
         console.log(`You selected the following planet: ${name}, with the index of ${index}`);
     }
+    const numberOfPlanets = selectedPlanets.length;
 
     return (
         <div className="fullBGpicture">
@@ -55,11 +57,14 @@ export const Destinations = () => {
                 <h1>Travel destinations</h1>
                 <section className="card">
                     <h2>Wishlist</h2>
-                    {/* TASK - React 1 week 2 */}
-                    {/* Display the number Of selected planets */}
-                    {/* Display the "no planets" message if it is empty! */}
-                    <p>No planets in wishlist :(</p>
-                    <p>You have {numberOfPlanets} in your wishlist</p>
+                    {numberOfPlanets === 0 ? (
+                        <p>No planets in wishlist :(</p>
+                    ) : (
+                        <p>You have {numberOfPlanets} {numberOfPlanets > 1 ? 'planets' : 'planet'} in your wishlist</p>
+                    )}
+                    {selectedPlanets.map((planet, index) => (
+                        <p key={index}>{planet}</p>
+                    ))}
                     <b>List coming soon after lesson 3!</b>
 
                     {/* STOP! - this is for week 3!*/}
@@ -88,8 +93,13 @@ export const Destinations = () => {
                 <section className="card">
                     <h2>Possible destinations</h2>
                     {planetItems.map((item, index) => (
-                        <PlanetCard name={item.name} key={index} description={item.description}
-                                    thumbnail={item.thumbnail} isSelected={item.isSelected} onAddOrRemovePlanet={onAddOrRemovePlanet} />
+                        <PlanetCard
+                            name={item.name}
+                            key={index}
+                            description={item.description}
+                            thumbnail={item.thumbnail}
+                            isSelected={selectedPlanets.includes(item.name)}
+                            onAddOrRemovePlanet={() => onAddOrRemovePlanet(item.name)}/>
                     ))}
                 </section>
             </main>

@@ -3,7 +3,6 @@
   width: 100vw;
   height: 100vh;
 }
-
 .planetCard {
   border: 1px solid var(--border-color);
   max-width: 70%;
@@ -14,7 +13,9 @@
   padding: var(--spacing-08);
   gap: var(--spacing-08);
 }
-
+.planetDescription {
+  line-height: 22px;
+}
 .planetCard:nth-child(odd) {
   margin-inline-start: auto;
 }
