@@ -11,6 +11,16 @@ const NASA_URLs = {
   marsRoverPhoto: `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${API_KEY}`,
 };
 
+const RoverPhoto = ({src, date, roverName}) => {
+  return (
+    <div className={styles.nasaPicOfTheDayImg}>
+      <img src={src} alt={`Rover: ${roverName} on ${date}`} />
+      <p>`Date: ${date}`</p>
+      <p>`Rover: ${roverName}`</p>
+    </div>
+  );
+}
+
 export const NasaCollaboration = () => {
   const [dailyImg, setDailyImg] = useState({});
   const [roverPhoto, setRoverPhoto] = useState({});
@@ -52,8 +62,7 @@ export const NasaCollaboration = () => {
           <h2>Rover Photos</h2>
           {/* TASK - React 1 week 3 */}
           {/* Iteratate over the roverPhoto?.photos array and display all the pictures! */}
-          {
-            roverPhoto?.photos?.length ? (
+          {roverPhoto?.photos?.length ? (
               <>
                 {/* TASK - React 1 week 3 */}
                 {/* Create a react component for the <RoverPhoto />, which should accept the following props */}
