@@ -2,7 +2,6 @@
 
 import React, {useState, useEffect} from 'react';
 import styles from './page.module.css';
-import {NextResponse as response} from "next/server";
 
 const API_KEY = 'TaA8BgllKVYPCxHa4t6SkF5NemO6QmTGv4lwvRkM';
 
@@ -15,8 +14,8 @@ const RoverPhoto = ({src, date, roverName}) => {
     return (
         <div className={styles.nasaPicOfTheDayImg}>
             <img src={src} alt={`Rover: ${roverName} on ${date}`}/>
-            <p>{`Date: ${date}`}</p>
-            <p>{`Rover: ${roverName}`}</p>
+            <p className={styles.roverText}>{`Date: ${date}`}</p>
+            <p className={styles.roverText}>{`Rover: ${roverName}`}</p>
         </div>
     );
 }
@@ -31,14 +30,18 @@ export const NasaCollaboration = () => {
             setRoverPhoto(roverPhotoResponse);
         };
 
-        fetchRoverPhotos();
-
         const fetchData = async () => {
-            const dailyImgResponse = await fetch(NASA_URLs.astronomyPicOfTheDay);
-            const dailyImg = await dailyImgResponse.json();
-            setDailyImg(dailyImg);
-            console.log(dailyImg);
+            try {
+                const dailyImgResponse = await fetch(NASA_URLs.astronomyPicOfTheDay);
+                const dailyImg = await dailyImgResponse.json();
+                setDailyImg(dailyImg);
+            }
+            catch (error) {
+                console.error("Error fetching astronomy picture of the day:", error);
+            }
         }
+
+        fetchRoverPhotos();
         fetchData();
     }, []);
 
@@ -59,16 +62,13 @@ export const NasaCollaboration = () => {
                     )}
                 </section>
                 <section className="card">
-                    <h2>Rover Photos</h2>
+                    <h2 className={styles.roverPhotosTitle}>Rover Photos</h2>
                     {roverPhoto?.photos?.length ? (
-                        <div className={styles.roverPhotosGrid}>
+                        <div className={styles.roverPhotos}>
                             {roverPhoto.photos.map((photo, index) => (
                                 <RoverPhoto key={index} src={photo.img_src} date={photo.earth_date}
                                             roverName={photo.rover.name}/>
                             ))}
-                            <p>Date {roverPhoto.photos[0]?.earth_date}</p>
-                            <img className={styles.nasaPicOfTheDayImg} src={roverPhoto.photos[0]?.img_src}
-                                 alt={dailyImg.title}/>
                         </div>
                     ) : (
                         <p>Loading rover photos...</p>

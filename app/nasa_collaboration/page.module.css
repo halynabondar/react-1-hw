@@ -6,7 +6,6 @@
 .nasaPicOfTheDayImg {
   width: auto;
   height: 400px;
-
 }
 .collaborationItem {
   display: flex;
@@ -19,4 +18,20 @@
 .collaborationText {
   line-height: 22px;
 }
-.roverPhotosGrid {}
+.roverPhotosTitle {
+  margin-bottom: 20px;
+}
+.roverPhotos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.roverPhotos img {
+  object-fit: cover;
+  width: 480px;
+  height: 340px;
+}
+.roverText {
+  margin-top: 10px;
+}
