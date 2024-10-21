@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
+import {NextResponse as response} from "next/server";
 
-// Read "/app/nasa_collaboration/README.md" for more info about the API_KEY
-// You need a proper API_KEY for the requests to work
 const API_KEY = 'TaA8BgllKVYPCxHa4t6SkF5NemO6QmTGv4lwvRkM';
 
 const NASA_URLs = {
@@ -24,8 +23,13 @@ export const NasaCollaboration = () => {
 
     fetchRoverPhotos();
 
-    // TASK - React 1 week 3 
-    // fetch the extra data for NASA_URLs.astronomyPicOfTheDay and save it to the dailyImg state variable
+    const fetchData = async () => {
+      const dailyImgResponse = await fetch(NASA_URLs.astronomyPicOfTheDay);
+      const dailyImg = await dailyImgResponse.json();
+      setDailyImg(dailyImg);
+      console.log(dailyImg);
+    }
+    fetchData();
   }, []);
 
   return (
@@ -37,7 +41,7 @@ export const NasaCollaboration = () => {
           {/* TASK - React 1 week 3 */}
           {/* After fetching data from the NASA_URLs.astronomyPicOfTheDay url, display the returned data here */}
           {/* You should display the title, explanation, and the image using the url from the response */}
-          {/* <img src={dailyImg.url}> */}
+          {/* <img src={dailyImg.url}>*/}
         </section>
         <section className="card">
           <h2>Rover Photos</h2>
