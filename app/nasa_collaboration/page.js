@@ -38,10 +38,15 @@ export const NasaCollaboration = () => {
         <h1>Collaboration with NASA</h1>
         <section className="card">
           <h2>Astronomy Picture of the day</h2>
-          {/* TASK - React 1 week 3 */}
-          {/* After fetching data from the NASA_URLs.astronomyPicOfTheDay url, display the returned data here */}
-          {/* You should display the title, explanation, and the image using the url from the response */}
-          {/* <img src={dailyImg.url}>*/}
+          {dailyImg && dailyImg.url ? (
+              <div className={styles.collaborationItem}>
+                <img src={dailyImg.url} title={dailyImg.title} alt={dailyImg.title}/>
+                <h3 className={styles.collaborationTitle}>{dailyImg.title}</h3>
+                <p className={styles.collaborationText}>{dailyImg.explanation}</p>
+              </div>
+          ) : (
+              <p>Loading...</p>
+          )}
         </section>
         <section className="card">
           <h2>Rover Photos</h2>

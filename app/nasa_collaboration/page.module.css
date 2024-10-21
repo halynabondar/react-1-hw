@@ -3,10 +3,19 @@
   width: 100vw;
   height: 100vh;
 }
-
-
 .nasaPicOfTheDayImg {
   width: auto;
   height: 400px;
 
+}
+.collaborationItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.collaborationTitle {
+  margin: 10px 10px 10px 0;
+}
+.collaborationText {
+  line-height: 22px;
 }
