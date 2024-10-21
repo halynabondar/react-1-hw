@@ -68,22 +68,20 @@ export const Destinations = () => {
                     ))}
                     <b>List coming soon after lesson 3!</b>
                     <AddWishlistItem/>
-                    {/* TASK - React 1 week 3 */}
-                    {/* Convert the list, so it is using selectedPlanets.map() to display the items  */}
-                    {/* Implement the "REMOVE" function */}
-                    {/* uncomment the following code snippet: */}
                     <h3>Your current wishlist</h3>
                     <div className={styles.wishlistList}>
-                        <PlanetWishlistItem
-                            name="europa"
-                            onRemove={() => removeFromWishlist('europa')}
-                            thumbnail="/destination/image-europa.png"
-                        />
-                        <PlanetWishlistItem
-                            name="europa"
-                            onRemove={() => removeFromWishlist('europa')}
-                            thumbnail="/destination/image-europa.png"
-                        />
+                        {selectedPlanets.length === 0 ? (
+                            <p>No planets in wishlist!</p>
+                        ) : (
+                            selectedPlanets.map((planet, index) => (
+                                <PlanetWishlistItem
+                                    key={index}
+                                    name={planet}
+                                    onRemove={() => onAddOrRemovePlanet(planet)}
+                                    thumbnail={planetItems.find(item => item.name === planet)?.thumbnail}
+                                />
+                            ))
+                        )}
                     </div>
                 </section>
                 <section className="card">
