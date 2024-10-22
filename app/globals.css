@@ -117,7 +117,6 @@ button {
   text-transform: uppercase;
   padding: var(--spacing-08);
   border: none;
-  background-color: white;
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -134,7 +133,6 @@ button {
   padding-block-start: var(--header-height);
   color: #fff;
 }
-
 
 .card {
   position: relative;
