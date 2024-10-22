@@ -50,6 +50,18 @@ export const Destinations = () => {
         });
         console.log(`You selected the following planet: ${name}, with the index of ${index}`);
     }
+
+    const onAddWishlistItem = (item) => {
+        setSelectedPlanets((prevSelectedPlanets) => {
+            // Prevent adding duplicates
+            if (prevSelectedPlanets.some(planet => planet === item.name)) {
+                alert(`${item.name} is already in your wishlist.`);
+                return prevSelectedPlanets;
+            }
+            return [...prevSelectedPlanets, item.name];
+        });
+    };
+
     const numberOfPlanets = selectedPlanets.length;
 
     return (
@@ -66,8 +78,7 @@ export const Destinations = () => {
                     {selectedPlanets.map((planet, index) => (
                         <p key={index}>{planet}</p>
                     ))}
-                    <b>List coming soon after lesson 3!</b>
-                    <AddWishlistItem/>
+                    <AddWishlistItem onAddWishlistItem={onAddWishlistItem} />
                     <h3>Your current wishlist</h3>
                     <div className={styles.wishlistList}>
                         {selectedPlanets.length === 0 ? (
@@ -93,7 +104,8 @@ export const Destinations = () => {
                             description={item.description}
                             thumbnail={item.thumbnail}
                             isSelected={selectedPlanets.includes(item.name)}
-                            onAddOrRemovePlanet={() => onAddOrRemovePlanet(item.name)}/>
+                            onAddOrRemovePlanet={() => onAddOrRemovePlanet(item.name, index)}
+                        />
                     ))}
                 </section>
             </main>
