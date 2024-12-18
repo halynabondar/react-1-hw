@@ -24,18 +24,3 @@ Now you should have to project on your computer.
 `npm run dev`
 
 Open your browser and navigate to http://localhost:3000 to see the app in action.
-
-## HOMEWORKS:
-
-Throughout the weeks you will be adding new features to this existing application.
-For your tasks you should be searching for the following:
-
-- Tasks for week1: `TASK - React 1 week 1`
-- Tasks for week2: `TASK - React 1 week 2`
-- Tasks for week3: `TASK - React 1 week 3`
-
-You should be fixing ALL THE INSTANSCES of the current week.
-
-### How to find the tags?
-
-Use the global search function in your IDE. (`cmnd + shift + F` OR `Control + shift + F`)
