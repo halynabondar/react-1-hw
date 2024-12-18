@@ -24,3 +24,7 @@ Now you should have to project on your computer.
 `npm run dev`
 
 Open your browser and navigate to http://localhost:3000 to see the app in action.
+
+### Screenshots
+
+<img src="public/1.png">
