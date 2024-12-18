@@ -28,3 +28,6 @@ Open your browser and navigate to http://localhost:3000 to see the app in action
 ### Screenshots
 
 <img src="public/1.png">
+<img src="public/2.png">
+<img src="public/3.png">
+<img src="public/4.png">
